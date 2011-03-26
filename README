@@ -1,0 +1,72 @@
+################################################
+SOMart (Self Organizing Art) Alpha Version 
+################################################
+
+SOMart was developped with the goal of automatically cluster in different groups art
+images which were made using different techniques. The algorithm had
+good results in tasks like distinguishing wood engraves (xilographs)
+from litographs.
+
+This project is based on Python ia636 (Image Processing module) and
+SOM_PAK 3.2 (Self Organizing Maps toolkit).
+
+It works extracting texture features from JPEG images using
+Co-occurence Matrixes and Fourier Analysis (FFT) to feed a Self
+Organizing Map (non supervised neural network) to automatically
+classificate the images based on input extraction vectors.
+
+#################################################
+Dependencies
+#################################################
+
+- Netpbm - http://netpbm.sourceforge.net/
+- Imagemagick - http://www.imagemagick.org/script/binary-releases.php
+- Python HTML module - http://pypi.python.org/pypi/html#downloads
+- IA636 module - http://www.dca.fee.unicamp.br/ia636/README.html
+
+* SOM_pak 3.2 is distributed together with the project
+
+#################################################
+Configuration
+#################################################
+
+As this is still an aplha version, the configuration of self organizing
+maps and feature extraction parameters can be made only by editing main.py file and
+changing values on somart class constructor variables.
+
+You can choose an image set changing the value of somart.testimages
+("escher_engraves" by default).
+
+If you wanna make tests with your own images, you have to create a new
+directory inside imgs with this structure:
+
+imgs/$image_set_name
+imgs/$image_set_name/jpg  <-- put your JPEG files here
+imgs/$image_set_name/pgm  <-- leave this empty, PGM files will be stored here
+
+You will also need to create this directory:
+
+imgs/$image_set_name
+
+And then you will need to change the value of somart.testimages to the
+name of the created directory ($image_set_name).
+
+* Automatic creation of necessary directories will be working on
+  beta version.
+
+#################################################
+Running
+#################################################
+
+To run the main algorithm:
+
+$ cd main
+$ python main.py
+
+After running main.py, the result of image clustering can be viewed
+in a HTML file named data/$set/$file.html, where $set is the
+name given to the image test set and $file.html is the filename
+generated according to the current date/time when main.py was called. 
+
+* Currently SOMart only runs in POSIX-like systems because it uses
+  shell scripting routines.

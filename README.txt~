@@ -1,0 +1,14 @@
+- Para executar o algoritmo principal (no terminal):
+cd bin
+cd main
+python main.py
+
+- Para configurar o algoritmo:
+cd bin
+cd main 
+(editor de texto, por exemplo "vim") main.py 
+
+* O arquivo main.py está comentado com as instruções de como configurar o algoritmo.
+* Depois de executado o algoritmo, o resultado pode ser visualizado no diretório bin/data/$conj/$arq.html , onde $conj é o conjunto de imagens de teste (exemplo gravuras) e $arq é o nome do arquivo, gerado de acordo com a data/hora em que o algoritmo foi executado.
+
+
